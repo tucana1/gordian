@@ -1,4 +1,4 @@
-import ShieldKit
+import ManagedSettingsUI
 
 class ShieldConfigurationExtension: ShieldConfigurationDataSource {
 
