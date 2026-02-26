@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		/* gordian app sources */
+		AA000001 /* gordianApp.swift */ = {isa = PBXBuildFile; fileRef = AB000001 /* gordianApp.swift */; };
+		AA000002 /* ContentView.swift */ = {isa = PBXBuildFile; fileRef = AB000002 /* ContentView.swift */; };
+		AA000003 /* HomeView.swift */ = {isa = PBXBuildFile; fileRef = AB000003 /* HomeView.swift */; };
+		AA000004 /* RulesView.swift */ = {isa = PBXBuildFile; fileRef = AB000004 /* RulesView.swift */; };
+		AA000005 /* AddRuleView.swift */ = {isa = PBXBuildFile; fileRef = AB000005 /* AddRuleView.swift */; };
+		AA000006 /* SetupView.swift */ = {isa = PBXBuildFile; fileRef = AB000006 /* SetupView.swift */; };
+		AA000007 /* QRScannerView.swift */ = {isa = PBXBuildFile; fileRef = AB000007 /* QRScannerView.swift */; };
+		AA000008 /* UnlockView.swift */ = {isa = PBXBuildFile; fileRef = AB000008 /* UnlockView.swift */; };
+		AA000009 /* SecureModeView.swift */ = {isa = PBXBuildFile; fileRef = AB000009 /* SecureModeView.swift */; };
+		AA000010 /* ScreenTimeRule.swift */ = {isa = PBXBuildFile; fileRef = AB000010 /* ScreenTimeRule.swift */; };
+		AA000011 /* UnlockMechanism.swift */ = {isa = PBXBuildFile; fileRef = AB000011 /* UnlockMechanism.swift */; };
+		AA000012 /* ScreenTimeManager.swift */ = {isa = PBXBuildFile; fileRef = AB000012 /* ScreenTimeManager.swift */; };
+		AA000013 /* UnlockManager.swift */ = {isa = PBXBuildFile; fileRef = AB000013 /* UnlockManager.swift */; };
+		AA000014 /* NFCManager.swift */ = {isa = PBXBuildFile; fileRef = AB000014 /* NFCManager.swift */; };
+		AA000015 /* QRCodeManager.swift */ = {isa = PBXBuildFile; fileRef = AB000015 /* QRCodeManager.swift */; };
+
+		/* Shield extension sources */
+		AA000020 /* ShieldConfigurationExtension.swift */ = {isa = PBXBuildFile; fileRef = AB000020 /* ShieldConfigurationExtension.swift */; };
+
+		/* DeviceActivity extension sources */
+		AA000030 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXBuildFile; fileRef = AB000030 /* DeviceActivityMonitorExtension.swift */; };
+
+		/* Frameworks - main app */
+		AA000040 /* FamilyControls.framework */ = {isa = PBXBuildFile; fileRef = AB000040 /* FamilyControls.framework */; };
+		AA000041 /* ManagedSettings.framework */ = {isa = PBXBuildFile; fileRef = AB000041 /* ManagedSettings.framework */; };
+		AA000042 /* DeviceActivity.framework */ = {isa = PBXBuildFile; fileRef = AB000042 /* DeviceActivity.framework */; };
+		AA000043 /* CoreNFC.framework */ = {isa = PBXBuildFile; fileRef = AB000043 /* CoreNFC.framework */; };
+		AA000044 /* AVFoundation.framework */ = {isa = PBXBuildFile; fileRef = AB000044 /* AVFoundation.framework */; };
+
+		/* Frameworks - shield extension */
+		AA000050 /* ShieldConfiguration.framework */ = {isa = PBXBuildFile; fileRef = AB000050 /* ShieldConfiguration.framework */; };
+
+		/* Frameworks - device activity extension */
+		AA000060 /* DeviceActivity.framework in DeviceActivityExt */ = {isa = PBXBuildFile; fileRef = AB000042 /* DeviceActivity.framework */; };
+		AA000061 /* ManagedSettings.framework in DeviceActivityExt */ = {isa = PBXBuildFile; fileRef = AB000041 /* ManagedSettings.framework */; };
+
+		/* Extension embed */
+		AA000070 /* gordianShieldExtension.appex */ = {isa = PBXBuildFile; fileRef = AC000001 /* gordianShieldExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA000071 /* gordianDeviceActivityExtension.appex */ = {isa = PBXBuildFile; fileRef = AC000002 /* gordianDeviceActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC000010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE000002;
+			remoteInfo = gordianShieldExtension;
+		};
+		AC000011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE000003;
+			remoteInfo = gordianDeviceActivityExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF000001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AA000070 /* gordianShieldExtension.appex */,
+				AA000071 /* gordianDeviceActivityExtension.appex */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		/* gordian app */
+		AB000001 /* gordianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gordianApp.swift; sourceTree = "<group>"; };
+		AB000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB000003 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
+		AB000004 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RulesView.swift; path = Views/RulesView.swift; sourceTree = "<group>"; };
+		AB000005 /* AddRuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddRuleView.swift; path = Views/AddRuleView.swift; sourceTree = "<group>"; };
+		AB000006 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetupView.swift; path = Views/SetupView.swift; sourceTree = "<group>"; };
+		AB000007 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRScannerView.swift; path = Views/QRScannerView.swift; sourceTree = "<group>"; };
+		AB000008 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnlockView.swift; path = Views/UnlockView.swift; sourceTree = "<group>"; };
+		AB000009 /* SecureModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecureModeView.swift; path = Views/SecureModeView.swift; sourceTree = "<group>"; };
+		AB000010 /* ScreenTimeRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScreenTimeRule.swift; path = Models/ScreenTimeRule.swift; sourceTree = "<group>"; };
+		AB000011 /* UnlockMechanism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnlockMechanism.swift; path = Models/UnlockMechanism.swift; sourceTree = "<group>"; };
+		AB000012 /* ScreenTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScreenTimeManager.swift; path = Managers/ScreenTimeManager.swift; sourceTree = "<group>"; };
+		AB000013 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnlockManager.swift; path = Managers/UnlockManager.swift; sourceTree = "<group>"; };
+		AB000014 /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFCManager.swift; path = Managers/NFCManager.swift; sourceTree = "<group>"; };
+		AB000015 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRCodeManager.swift; path = Managers/QRCodeManager.swift; sourceTree = "<group>"; };
+		AB000016 /* gordian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gordian.entitlements; sourceTree = "<group>"; };
+		AB000017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		/* Shield extension */
+		AB000020 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
+		AB000021 /* gordianShieldExtension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		/* DeviceActivity extension */
+		AB000030 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		AB000031 /* gordianDeviceActivityExtension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		/* Frameworks */
+		AB000040 /* FamilyControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FamilyControls.framework; path = System/Library/Frameworks/FamilyControls.framework; sourceTree = SDKROOT; };
+		AB000041 /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
+		AB000042 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		AB000043 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		AB000044 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AB000050 /* ShieldConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShieldConfiguration.framework; path = System/Library/Frameworks/ShieldConfiguration.framework; sourceTree = SDKROOT; };
+
+		/* Products */
+		AC000000 /* gordian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gordian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC000001 /* gordianShieldExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = gordianShieldExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC000002 /* gordianDeviceActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = gordianDeviceActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE000010 /* Frameworks - main app */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000040 /* FamilyControls.framework */,
+				AA000041 /* ManagedSettings.framework */,
+				AA000042 /* DeviceActivity.framework */,
+				AA000043 /* CoreNFC.framework */,
+				AA000044 /* AVFoundation.framework */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE000011 /* Frameworks - shield extension */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000050 /* ShieldConfiguration.framework */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE000012 /* Frameworks - device activity extension */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000060 /* DeviceActivity.framework in DeviceActivityExt */,
+				AA000061 /* ManagedSettings.framework in DeviceActivityExt */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		/* Root */
+		AG000000 = {
+			isa = PBXGroup;
+			children = (
+				AG000001 /* gordian */,
+				AG000002 /* gordianShieldExtension */,
+				AG000003 /* gordianDeviceActivityExtension */,
+				AG000004 /* Frameworks */,
+				AG000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+
+		/* gordian app group */
+		AG000001 /* gordian */ = {
+			isa = PBXGroup;
+			children = (
+				AB000001 /* gordianApp.swift */,
+				AB000002 /* ContentView.swift */,
+				AG000010 /* Views */,
+				AG000011 /* Models */,
+				AG000012 /* Managers */,
+				AB000016 /* gordian.entitlements */,
+				AB000017 /* Info.plist */,
+			);
+			path = gordian;
+			sourceTree = "<group>";
+		};
+
+		AG000010 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB000003 /* HomeView.swift */,
+				AB000004 /* RulesView.swift */,
+				AB000005 /* AddRuleView.swift */,
+				AB000006 /* SetupView.swift */,
+				AB000007 /* QRScannerView.swift */,
+				AB000008 /* UnlockView.swift */,
+				AB000009 /* SecureModeView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+
+		AG000011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB000010 /* ScreenTimeRule.swift */,
+				AB000011 /* UnlockMechanism.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+
+		AG000012 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AB000012 /* ScreenTimeManager.swift */,
+				AB000013 /* UnlockManager.swift */,
+				AB000014 /* NFCManager.swift */,
+				AB000015 /* QRCodeManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+
+		/* Shield extension group */
+		AG000002 /* gordianShieldExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AB000020 /* ShieldConfigurationExtension.swift */,
+				AB000021 /* gordianShieldExtension-Info.plist */,
+			);
+			path = gordianShieldExtension;
+			sourceTree = "<group>";
+		};
+
+		/* DeviceActivity extension group */
+		AG000003 /* gordianDeviceActivityExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AB000030 /* DeviceActivityMonitorExtension.swift */,
+				AB000031 /* gordianDeviceActivityExtension-Info.plist */,
+			);
+			path = gordianDeviceActivityExtension;
+			sourceTree = "<group>";
+		};
+
+		/* Frameworks group */
+		AG000004 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB000040 /* FamilyControls.framework */,
+				AB000041 /* ManagedSettings.framework */,
+				AB000042 /* DeviceActivity.framework */,
+				AB000043 /* CoreNFC.framework */,
+				AB000044 /* AVFoundation.framework */,
+				AB000050 /* ShieldConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+
+		/* Products group */
+		AG000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC000000 /* gordian.app */,
+				AC000001 /* gordianShieldExtension.appex */,
+				AC000002 /* gordianDeviceActivityExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		/* Main app target */
+		AE000001 /* gordian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC000001 /* Build configuration list for gordian */;
+			buildPhases = (
+				AE000010 /* Frameworks - main app */,
+				AE000020 /* Sources - main app */,
+				AE000030 /* Resources - main app */,
+				AF000001 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE000100 /* gordianShieldExtension dependency */,
+				AE000101 /* gordianDeviceActivityExtension dependency */,
+			);
+			name = gordian;
+			packageProductDependencies = (
+			);
+			productName = gordian;
+			productReference = AC000000 /* gordian.app */;
+			productType = "com.apple.product-type.application";
+		};
+
+		/* Shield extension target */
+		AE000002 /* gordianShieldExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC000002 /* Build configuration list for gordianShieldExtension */;
+			buildPhases = (
+				AE000011 /* Frameworks - shield extension */,
+				AE000021 /* Sources - shield extension */,
+				AE000031 /* Resources - shield extension */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gordianShieldExtension;
+			productName = gordianShieldExtension;
+			productReference = AC000001 /* gordianShieldExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+
+		/* DeviceActivity extension target */
+		AE000003 /* gordianDeviceActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC000003 /* Build configuration list for gordianDeviceActivityExtension */;
+			buildPhases = (
+				AE000012 /* Frameworks - device activity extension */,
+				AE000022 /* Sources - device activity extension */,
+				AE000032 /* Resources - device activity extension */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gordianDeviceActivityExtension;
+			productName = gordianDeviceActivityExtension;
+			productReference = AC000002 /* gordianDeviceActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXTargetDependency section */
+		AE000100 /* gordianShieldExtension dependency */ = {
+			isa = PBXTargetDependency;
+			target = AE000002 /* gordianShieldExtension */;
+			targetProxy = AC000010 /* PBXContainerItemProxy */;
+		};
+		AE000101 /* gordianDeviceActivityExtension dependency */ = {
+			isa = PBXTargetDependency;
+			target = AE000003 /* gordianDeviceActivityExtension */;
+			targetProxy = AC000011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXProject section */
+		AD000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AE000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					AE000002 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					AE000003 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = BC000000 /* Build configuration list for project */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AG000000;
+			productRefGroup = AG000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE000001 /* gordian */,
+				AE000002 /* gordianShieldExtension */,
+				AE000003 /* gordianDeviceActivityExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE000030 /* Resources - main app */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE000031 /* Resources - shield extension */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE000032 /* Resources - device activity extension */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE000020 /* Sources - main app */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001 /* gordianApp.swift */,
+				AA000002 /* ContentView.swift */,
+				AA000003 /* HomeView.swift */,
+				AA000004 /* RulesView.swift */,
+				AA000005 /* AddRuleView.swift */,
+				AA000006 /* SetupView.swift */,
+				AA000007 /* QRScannerView.swift */,
+				AA000008 /* UnlockView.swift */,
+				AA000009 /* SecureModeView.swift */,
+				AA000010 /* ScreenTimeRule.swift */,
+				AA000011 /* UnlockMechanism.swift */,
+				AA000012 /* ScreenTimeManager.swift */,
+				AA000013 /* UnlockManager.swift */,
+				AA000014 /* NFCManager.swift */,
+				AA000015 /* QRCodeManager.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE000021 /* Sources - shield extension */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000020 /* ShieldConfigurationExtension.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE000022 /* Sources - device activity extension */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000030 /* DeviceActivityMonitorExtension.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		/* Project-level Debug */
+		BC000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+
+		/* Project-level Release */
+		BC000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+
+		/* gordian app - Debug */
+		BC000020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = gordian/gordian.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = gordian/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordian.app;
+				PRODUCT_NAME = gordian;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+
+		/* gordian app - Release */
+		BC000021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = gordian/gordian.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = gordian/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordian.app;
+				PRODUCT_NAME = gordian;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+
+		/* Shield extension - Debug */
+		BC000030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = gordianShieldExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordian.app.shield;
+				PRODUCT_NAME = gordianShieldExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+
+		/* Shield extension - Release */
+		BC000031 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = gordianShieldExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordian.app.shield;
+				PRODUCT_NAME = gordianShieldExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+
+		/* DeviceActivity extension - Debug */
+		BC000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = gordianDeviceActivityExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordian.app.deviceactivity;
+				PRODUCT_NAME = gordianDeviceActivityExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+
+		/* DeviceActivity extension - Release */
+		BC000041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = gordianDeviceActivityExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordian.app.deviceactivity;
+				PRODUCT_NAME = gordianDeviceActivityExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC000000 /* Build configuration list for project */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC000010 /* Debug */,
+				BC000011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC000001 /* Build configuration list for gordian */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC000020 /* Debug */,
+				BC000021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC000002 /* Build configuration list for gordianShieldExtension */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC000030 /* Debug */,
+				BC000031 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC000003 /* Build configuration list for gordianDeviceActivityExtension */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC000040 /* Debug */,
+				BC000041 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = AD000001 /* Project object */;
+}
