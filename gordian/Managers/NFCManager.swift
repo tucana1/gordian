@@ -15,8 +15,8 @@ class NFCManager: NSObject, ObservableObject, NFCTagReaderSessionDelegate {
             return
         }
         self.onTagRead = onTagRead
-        session = NFCTagReaderSession(pollingOption: [.iso14443, .iso15693], delegate: self, queue: .main)
-        session?.alertMessage = "Hold your amiibo near the top of your iPhone"
+        session = NFCTagReaderSession(pollingOption: [.iso14443, .iso15693, .iso18092], delegate: self, queue: .main)
+        session?.alertMessage = "Hold your NFC tag near the top of your iPhone"
         session?.begin()
     }
 

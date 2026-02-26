@@ -2,7 +2,7 @@ import Foundation
 
 enum UnlockType: String, Codable, CaseIterable {
     case qrCode = "QR Code"
-    case nfc = "NFC (Amiibo)"
+    case nfc = "NFC Tag"
 }
 
 struct UnlockMechanism: Identifiable, Codable {

@@ -45,7 +45,7 @@ struct UnlockView: View {
                             startNFCReading()
                         } label: {
                             Label(
-                                isReadingNFC ? "Reading NFC…" : "Tap NFC Tag (Amiibo)",
+                                isReadingNFC ? "Reading NFC…" : "Tap NFC Tag",
                                 systemImage: "wave.3.right"
                             )
                             .font(.headline)

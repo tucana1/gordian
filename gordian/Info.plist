@@ -25,7 +25,7 @@
     <key>NSCameraUsageDescription</key>
     <string>Gordian uses the camera to scan QR codes as physical unlock keys.</string>
     <key>NFCReaderUsageDescription</key>
-    <string>Gordian reads NFC tags (like amiibo) as physical unlock keys.</string>
+    <string>Gordian reads NFC tags (such as amiibo, key cards, stickers, or any ISO-compliant tag) as physical unlock keys.</string>
     <key>UIApplicationSceneManifest</key>
     <dict>
         <key>UIApplicationSupportsMultipleScenes</key>

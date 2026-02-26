@@ -118,7 +118,7 @@ struct AddMechanismView: View {
         NavigationView {
             Form {
                 Section("Name") {
-                    TextField("e.g. My Amiibo / My QR Code", text: $name)
+                    TextField("e.g. My Key Card / My QR Code", text: $name)
                 }
 
                 Section("Type") {
@@ -149,7 +149,7 @@ struct AddMechanismView: View {
                             showingScanner = true
                         }
                     } else {
-                        Button("Read NFC Tag (Amiibo)") {
+                        Button("Read NFC Tag") {
                             showingNFCReader = true
                         }
                     }
