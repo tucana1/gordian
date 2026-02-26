@@ -1,8 +1,10 @@
 import SwiftUI
+import CryptoKit
 
 struct SecureModeView: View {
     @AppStorage("gordian.secureMode.enabled") private var secureModeEnabled = false
-    @AppStorage("gordian.secureMode.pin") private var storedPIN = ""
+    /// Stores a hex-encoded SHA-256 hash of the PIN (never the raw PIN)
+    @AppStorage("gordian.secureMode.pinHash") private var storedPINHash = ""
     @AppStorage("gordian.secureMode.requireUnlockToDisable") private var requireUnlockToDisable = true
 
     @State private var showingPINSetup = false
@@ -54,6 +56,7 @@ struct SecureModeView: View {
                         Button("Disable Secure Mode", role: .destructive) {
                             showDisableConfirmation = true
                         }
+
                     }
                 } else {
                     Section {
@@ -86,7 +89,7 @@ struct SecureModeView: View {
             .navigationTitle("Secure Mode")
             .sheet(isPresented: $showingPINSetup) {
                 PINSetupView(
-                    storedPIN: $storedPIN,
+                    storedPINHash: $storedPINHash,
                     secureModeEnabled: $secureModeEnabled
                 )
             }
@@ -97,7 +100,7 @@ struct SecureModeView: View {
             ) {
                 Button("Disable", role: .destructive) {
                     secureModeEnabled = false
-                    storedPIN = ""
+                    storedPINHash = ""
                 }
                 Button("Cancel", role: .cancel) {}
             } message: {
@@ -111,7 +114,7 @@ struct SecureModeView: View {
 
 struct PINSetupView: View {
     @Environment(\.dismiss) var dismiss
-    @Binding var storedPIN: String
+    @Binding var storedPINHash: String
     @Binding var secureModeEnabled: Bool
 
     @State private var pin = ""
@@ -163,9 +166,15 @@ struct PINSetupView: View {
             errorMessage = "PINs do not match"
             return
         }
-        storedPIN = pin
+        storedPINHash = sha256(pin)
         secureModeEnabled = true
         dismiss()
+    }
+
+    private func sha256(_ input: String) -> String {
+        let data = Data(input.utf8)
+        let digest = SHA256.hash(data: data)
+        return digest.map { String(format: "%02x", $0) }.joined()
     }
 }
 

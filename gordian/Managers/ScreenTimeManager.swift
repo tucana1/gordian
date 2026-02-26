@@ -48,8 +48,11 @@ class ScreenTimeManager: ObservableObject {
     }
 
     func saveRules() {
-        if let data = try? JSONEncoder().encode(rules) {
+        do {
+            let data = try JSONEncoder().encode(rules)
             UserDefaults.standard.set(data, forKey: rulesKey)
+        } catch {
+            print("Gordian: failed to encode rules – \(error)")
         }
     }
 
@@ -103,11 +106,7 @@ class ScreenTimeManager: ObservableObject {
         store.shield.applications = nil
         store.shield.applicationCategories = nil
         store.shield.webDomains = nil
-
-        // Re-apply rules after unlock duration
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration) { [weak self] in
-            self?.applyRules()
-        }
+        // Re-locking after duration is handled by UnlockManager.
     }
 
     func reapplyRules() {

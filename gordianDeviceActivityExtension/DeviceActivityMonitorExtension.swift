@@ -32,7 +32,10 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
 
     private func applyRestrictions() {
         // Read stored rule data from shared UserDefaults (App Group)
-        let defaults = UserDefaults(suiteName: "group.com.gordian.app") ?? .standard
+        guard let defaults = UserDefaults(suiteName: "group.com.gordian.app") else {
+            print("Gordian DeviceActivity: App Group UserDefaults unavailable – restrictions not applied")
+            return
+        }
         guard let data = defaults.data(forKey: "gordian.screentime.rules"),
               let rules = try? JSONDecoder().decode([ScreenTimeRuleSnapshot].self, from: data) else {
             return

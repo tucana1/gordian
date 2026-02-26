@@ -8,9 +8,9 @@ struct UnlockView: View {
     @State private var unlockDurationMinutes: Int = 30
     @State private var showError = false
     @State private var errorMessage = ""
-    @State private var showSuccess = false
+    @State private var nfcTimeoutItem: DispatchWorkItem?
 
-    private let storageKey = "gordian.unlock.mechanisms"
+    @State private var showSuccess = false
 
     var body: some View {
         NavigationView {
@@ -126,14 +126,19 @@ struct UnlockView: View {
         isReadingNFC = true
         NFCManager.shared.startReading { uid in
             DispatchQueue.main.async {
+                self.nfcTimeoutItem?.cancel()
+                self.nfcTimeoutItem = nil
                 isReadingNFC = false
                 handleScannedValue(uid)
             }
         }
-        // Reset flag after timeout
-        DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+        // Cancel the NFC flag if the session times out without a read
+        let workItem = DispatchWorkItem {
             isReadingNFC = false
+            nfcTimeoutItem = nil
         }
+        nfcTimeoutItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: workItem)
     }
 
     private func handleScannedValue(_ value: String) {
