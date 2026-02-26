@@ -31,7 +31,10 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     }
 
     private func applyRestrictions() {
-        // Read stored rule data from shared UserDefaults (App Group)
+        // Read stored rule data from shared UserDefaults (App Group).
+        // NOTE: The App Group "group.com.gordian.app" must be configured in both
+        // the main app and this extension's entitlements/provisioning profile.
+        // The storage key below must match ScreenTimeManager.rulesKey in the main app.
         guard let defaults = UserDefaults(suiteName: "group.com.gordian.app") else {
             print("Gordian DeviceActivity: App Group UserDefaults unavailable – restrictions not applied")
             return

@@ -9,8 +9,10 @@ struct UnlockView: View {
     @State private var showError = false
     @State private var errorMessage = ""
     @State private var nfcTimeoutItem: DispatchWorkItem?
-
     @State private var showSuccess = false
+
+    private let storageKey = "gordian.unlock.mechanisms"
+    private let nfcReadingTimeout: TimeInterval = 30
 
     var body: some View {
         NavigationView {
@@ -138,7 +140,7 @@ struct UnlockView: View {
             nfcTimeoutItem = nil
         }
         nfcTimeoutItem = workItem
-        DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: workItem)
+        DispatchQueue.main.asyncAfter(deadline: .now() + nfcReadingTimeout, execute: workItem)
     }
 
     private func handleScannedValue(_ value: String) {

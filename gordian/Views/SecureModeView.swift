@@ -78,8 +78,8 @@ struct SecureModeView: View {
                     Text("To fully prevent app deletion, enable Screen Time restrictions in iOS Settings > Screen Time > Content & Privacy Restrictions and set a Screen Time passcode.")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Button("Open Screen Time Settings") {
-                        if let url = URL(string: "App-prefs:SCREEN_TIME") {
+                    Button("Open Settings") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.open(url)
                         }
                     }
