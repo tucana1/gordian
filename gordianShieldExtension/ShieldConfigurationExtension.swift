@@ -1,4 +1,4 @@
-import ShieldConfiguration
+import ShieldKit
 
 class ShieldConfigurationExtension: ShieldConfigurationDataSource {
 
