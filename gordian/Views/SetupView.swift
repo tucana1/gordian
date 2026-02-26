@@ -152,6 +152,9 @@ struct AddMechanismView: View {
                         Button("Read NFC Tag") {
                             showingNFCReader = true
                         }
+                        Text("Works with any NFC-enabled tag or card — look for the contactless symbol ())) on credit cards, hotel keys, transit cards, stickers, and more.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                 }
             }
