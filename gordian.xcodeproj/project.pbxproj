@@ -38,7 +38,7 @@
 		AA000044 /* AVFoundation.framework */ = {isa = PBXBuildFile; fileRef = AB000044 /* AVFoundation.framework */; };
 
 		/* Frameworks - shield extension */
-		AA000050 /* ShieldKit.framework */ = {isa = PBXBuildFile; fileRef = AB000050 /* ShieldKit.framework */; };
+		AA000050 /* ManagedSettingsUI.framework */ = {isa = PBXBuildFile; fileRef = AB000050 /* ManagedSettingsUI.framework */; };
 
 		/* Frameworks - device activity extension */
 		AA000060 /* DeviceActivity.framework in DeviceActivityExt */ = {isa = PBXBuildFile; fileRef = AB000042 /* DeviceActivity.framework */; };
@@ -115,7 +115,7 @@
 		AB000042 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
 		AB000043 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		AB000044 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		AB000050 /* ShieldKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShieldKit.framework; path = System/Library/Frameworks/ShieldKit.framework; sourceTree = SDKROOT; };
+		AB000050 /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = System/Library/Frameworks/ManagedSettingsUI.framework; sourceTree = SDKROOT; };
 
 		/* Products */
 		AC000000 /* gordian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gordian.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA000050 /* ShieldKit.framework */,
+				AA000050 /* ManagedSettingsUI.framework */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +253,7 @@
 				AB000042 /* DeviceActivity.framework */,
 				AB000043 /* CoreNFC.framework */,
 				AB000044 /* AVFoundation.framework */,
-				AB000050 /* ShieldKit.framework */,
+				AB000050 /* ManagedSettingsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
