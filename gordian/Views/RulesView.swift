@@ -9,11 +9,15 @@ struct RulesView: View {
         NavigationView {
             List {
                 if screenTimeManager.rules.isEmpty {
-                    ContentUnavailableView(
-                        "No Rules",
-                        systemImage: "shield.slash",
-                        description: Text("Add a rule to start blocking apps")
-                    )
+                    if #available(iOS 17.0, *) {
+                        ContentUnavailableView(
+                            "No Rules",
+                            systemImage: "shield.slash",
+                            description: Text("Add a rule to start blocking apps")
+                        )
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 } else {
                     ForEach($screenTimeManager.rules) { $rule in
                         RuleRow(rule: $rule, onTap: { ruleToEdit = rule })

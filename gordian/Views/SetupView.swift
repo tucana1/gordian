@@ -17,11 +17,15 @@ struct SetupView: View {
         NavigationView {
             List {
                 if mechanisms.isEmpty {
-                    ContentUnavailableView(
-                        "No Unlock Mechanisms",
-                        systemImage: "qrcode",
-                        description: Text("Add a QR code or NFC tag to use as a physical key")
-                    )
+                    if #available(iOS 17.0, *) {
+                        ContentUnavailableView(
+                            "No Unlock Mechanisms",
+                            systemImage: "qrcode",
+                            description: Text("Add a QR code or NFC tag to use as a physical key")
+                        )
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 } else {
                     ForEach(mechanisms) { mechanism in
                         HStack {
@@ -37,7 +41,7 @@ struct SetupView: View {
                                     .foregroundColor(.secondary)
                                 Text(mechanism.identifier.prefix(20) + (mechanism.identifier.count > 20 ? "…" : ""))
                                     .font(.caption2)
-                                    .foregroundColor(.tertiary)
+                                    .foregroundStyle(.tertiary)
                                     .monospaced()
                             }
                             Spacer()

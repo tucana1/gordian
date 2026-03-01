@@ -1,5 +1,6 @@
 import DeviceActivity
 import ManagedSettings
+import Foundation
 
 class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     private let store = ManagedSettingsStore()
